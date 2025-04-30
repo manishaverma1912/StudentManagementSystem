@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Review form</h2>
+
+    <form method="post">
+        {% csrf_token %}
+        <input type="text" name="Manisha" id=""  placeholder="name"><br>
+        <input type="text" name="email" id="" placeholder="email"><br>
+        <input type="text" name="message" id="" placeholder="message"><br><br>
+        <button type="submit"> Submit</button>
+    </form>
+
+    
+
+    <h2>Submitted Review </h2>
+
+    {% for i in RF %}
+ 
+    <!-- <div>
+    <p>  Name : {{Review.name}} </p>  
+    <p>Email :   ({{Review.email}})</p>
+    <p>Message :  {{Review.message}} </p>
+    <hr>
+    </div> -->
+
+
+    <ul style="list-style-type: square;">
+        <li>Name : {{i.name}}</li>
+        <li>Email :   ({{i.email}})</li>
+        <li>Message :  {{i.message}}</li>
+
+        <a href="{% url 'delete__review' i.id   %}">delete id </a><br>
+        <a href="{% url 'delete__review' i.pk   %}">delete pk </a><br>
+
+        <a href="{% url 'update__review' i.id %}">Update</a>
+
+
+
+    </ul>
+
+
+    {% endfor  %}
+
+
+    
+
+
+
+
+    
+</body>
+</html>

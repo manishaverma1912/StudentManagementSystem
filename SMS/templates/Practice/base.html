@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    {% include 'Practice//header.html'  %}
+
+    <header>
+        <h1>this is for  base heading.</h1>
+    </header>
+
+
+
+    {% if greetings == "best" %}
+    <h1>Manisha</h1>
+    {% elif greetings == 1 %}
+    <h1>Vivek</h1>
+    {% elif greetings == 2 %}
+    <h1>Sharma</h1>
+    {% elif greetings == 3 %}
+    <h1>Js</h1>
+    {% else %}
+    <h1> Rajput </h1>
+    {%  endif %}
+
+
+    {% block content %}
+    {% endblock %}
+
+    <footer>
+        <h1>this is base footer .</h1>
+    </footer>
+
+
+    {% include 'Practice//footer.html' %}
+    
+</body>
+</html>

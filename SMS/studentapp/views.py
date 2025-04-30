@@ -3,7 +3,7 @@ from django.http import HttpResponse
 # Create your views here.
 
 def index(request):
-    return render(request , 'index.html')
+    return render(request , 'Practice//index.html')
 
 
 
@@ -54,11 +54,33 @@ def test(request):
     
 </body>
 </html"""
-    return render(request , 'test.html', {'jsss': js})    
+    return render(request , 'Practice//test.html', {'jsss': js})    
 
 def test1(request):
     txt ="""<h1 style= "color: orange ;" > Tell me about your self </h1>
     """
     name="Manisha"
     college ="University of Lucknow "
-    return render(request , 'test1.html' ,{'t': txt  , 'myname':name , "mycollege" :college } )  # t is a key and txt is the value and they are dictionary 
+    return render(request , 'Practice//test1.html' ,{'t': txt  , 'myname':name , "mycollege" :college } )  # t is a key and txt is the value and they are dictionary
+    
+
+
+
+
+def main(request):
+    return render(request , 'Main.html')
+
+
+def another(request):
+    return render(request , 'Practice//another.html')    
+
+
+
+def base(request):
+    # return render(request, 'Practice//base.html' , { "greetings" : 1 })
+
+    # gree = "best"
+    gree = 3 
+    return render(request , 'Practice//base.html' , {"greetings" : gree } )    
+
+

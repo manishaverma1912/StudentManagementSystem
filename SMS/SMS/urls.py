@@ -16,8 +16,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path ,include
+from CRUD import views as v2
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('' ,include('studentapp.urls')),
+    path('account/' , include('account.urls')),
+    path('reviewform/',v2.reviewForm , name = 'reviewform' ),
+    path('delete/<int:ok>/', v2.delete_review, name = 'delete__review'),
+    path('update/<int:ok>/', v2.update_review , name ='update__review'),
 ]
